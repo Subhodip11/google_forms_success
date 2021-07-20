@@ -158,7 +158,7 @@ app.get('/admin/myForm/Details:id', (req, res) => {
         console.log(err)
     })
 })
-
-app.listen(2233, () => {
+const PORT = process.env.PORT || 2233;
+app.listen(PORT, () => {
     console.log('Server has started listening at 2233');
 })
