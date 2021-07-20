@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    #container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: center;
+        border: 1px solid black;
+        background-color: rgb(252, 245, 246);
+    }
+    
+    .header {
+        margin: 1rem auto;
+        height: auto;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        /* border: 1px solid black; */
+        position: relative;
+        background-color: white;
+    }
+    
+    .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10%;
+        width: 100%;
+        background-color: blueviolet;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    
+    button {
+        text-decoration: underline;
+        color: blue;
+        outline: none;
+        background: transparent;
+        border: none;
+    }
+    
+    @media screen and (max-width:450px) {
+        .header {
+            width: 90%;
+        }
+        .card {
+            width: 90%;
+        }
+        .form-inputs {
+            width: 70%;
+        }
+    }
+</style>
+
+<body>
+    <form action="#" method="post" id="container">
+        <div class="header">
+            <h1 style="margin-top: 1rem;">This is a Trial Form</h1>
+            <p style="margin-top: 1rem;">Your response is submited successfully</p>
+            <p style="margin-top: 1rem;">
+            </p>
+            <p style="color: red; margin-top: 1rem;"><a href="/myForms">Submit Another Response</a></p>
+        </div>
+    </form>
+</body>
+
+</html>

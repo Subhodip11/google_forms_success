@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    #container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        /* border: 1px solid black; */
+        background-color: rgb(252, 245, 246);
+    }
+    
+    .header {
+        margin: 1rem auto;
+        height: auto;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        /* border: 1px solid black; */
+        position: relative;
+        background-color: white;
+    }
+    
+    .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10%;
+        width: 100%;
+        background-color: blueviolet;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    
+    .card {
+        margin: 1rem auto;
+        height: auto;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: white;
+    }
+    
+    .headings {
+        font-weight: lighter;
+        display: inline;
+        position: relative;
+    }
+    
+    .form-inputs {
+        margin: 2rem 0;
+        padding: 0.3rem;
+        display: block;
+        border: none;
+        width: 40%;
+        border-bottom: 1px solid rgb(114, 110, 110);
+        outline: none;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        color: black;
+    }
+    
+    #submit {
+        outline: none;
+        border: none;
+        background-color: rgb(58, 58, 241);
+        color: white;
+        border-radius: 0.3rem;
+        padding: 0.5rem 2rem;
+        margin: 1rem 0;
+        transition: 0.2s linear;
+    }
+    
+    #submit:hover {
+        background-color: rgb(141, 141, 252);
+    }
+</style>
+
+<body>
+    <form action="" method="post" id="container">
+        <div class="header">
+            <h1 style="margin-top: 1rem;">This is a Trial Form</h1>
+            <p style="margin-top: 1rem;">The data your clicked its details are displayed below</p>
+        </div>
+        <div class="card">
+            <h2 class="headings">Name</h2>
+            <input type="text" value="<%= data.name %>" name="Name" class="form-inputs" placeholder="Your Name">
+            <h2 class="headings">Email</h2>
+            <input type="email" value="<%= data.email_address %>" name="Email" class="form-inputs" placeholder="Your Name">
+            <h2 class="headings">Contact</h2>
+            <input type="tel" value="<%= data.contact %>" name="Contact" class="form-inputs" placeholder="Your Name">
+            <h2 class="headings">Address</h2>
+            <input type="text" value="<%= data.address %>" name="Residence" class="form-inputs" placeholder="Your Name">
+            <h2 class="headings">Choice</h2>
+            <input type="text" value="<%= data.choice %>" name="Choice" class="form-inputs" placeholder="Your Name">
+            <div class="button">
+                <form action="/admin/myForm" method="post">
+                    <input type="submit" value="Save Details" id="submit">
+                </form>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

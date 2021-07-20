@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    #container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: rgb(252, 245, 246);
+    }
+    
+    .header {
+        margin: 1rem auto;
+        height: auto;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        /* border: 1px solid black; */
+        position: relative;
+        background-color: white;
+    }
+    
+    .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10%;
+        width: 100%;
+        background-color: blueviolet;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    
+    .card {
+        margin: 1rem auto;
+        height: auto;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: white;
+    }
+    
+    .form-inputs {
+        margin-top: 2rem;
+        padding: 0.3rem;
+        display: block;
+        border: none;
+        width: 80%;
+        border-bottom: 1px solid rgb(114, 110, 110);
+        outline: none;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        color: black;
+    }
+    
+    .headings {
+        font-weight: lighter;
+        display: inline;
+        position: relative;
+    }
+    
+    .astrick {
+        color: red;
+        display: inline;
+        font-size: 15px;
+        position: absolute;
+        top: 0;
+    }
+    
+    #submit {
+        outline: none;
+        border: none;
+        background-color: rgb(58, 58, 241);
+        color: white;
+        border-radius: 0.3rem;
+        padding: 0.5rem 2rem;
+        margin: 1rem 0;
+        position: relative;
+        right: 16rem;
+        transition: 0.2s linear;
+    }
+    
+    #submit:hover {
+        background-color: rgb(141, 141, 252);
+    }
+    
+    @media screen and (max-width:450px) {
+        .header {
+            width: 90%;
+        }
+        .card {
+            width: 90%;
+        }
+        .form-inputs {
+            width: 70%;
+        }
+        .headings {
+            font-size: 15px;
+        }
+    }
+</style>
+
+<body>
+    <form action="/myFormSuccess" enctype="multipart/form-data" method="POST" id="container">
+        <div class="header">
+            <h1>This is a Trial Form</h1>
+            <p style="margin-top: 1rem;">Please enter all fields correctly</p>
+            <p style="color: red; margin-top: 1rem;">*Required</p>
+        </div>
+        <div class="card">
+            <h2 class="headings">Name of Details Provider
+                <p class="astrick">*</p>
+            </h2>
+            <input type="text" name="Name_Personal" class="form-inputs" placeholder="Your Name" required>
+        </div>
+        <div class="card">
+            <h2 class="headings">Name of Club
+                <p class="astrick">*</p>
+            </h2>
+            <input type="text" name="Name_Club" class="form-inputs" placeholder="Your Clubs Name" required>
+        </div>
+        <div class="card">
+            <h2 class="headings">Link of Your Club's Official Page
+                <p class="astrick">*</p>
+            </h2>
+            <input type="text" name="Link" class="form-inputs" placeholder="Your Response" required>
+        </div>
+        <div class="card">
+            <h2 class="headings">Contact number of any one admin
+                <p class="astrick">*</p>
+            </h2>
+            <input type="tel" name="Contact" class="form-inputs" placeholder="Admin Contact Number" required>
+        </div>
+        <div class="card">
+            <h2 class="headings">Coordinator Names(if any) Space Separated
+            </h2>
+            <input type="text" name="Coordinator_Name" class="form-inputs" placeholder="Your Answer">
+        </div>
+
+        <div class="card">
+            <h2 class="headings">Admin Names Space Separated
+                <p class="astrick">*</p>
+            </h2>
+            <input type="text" name="Admin_Name" class="form-inputs" placeholder="Your Answer" required>
+        </div>
+        <div class="card">
+            <h2 class="headings" style="display: block;">Provide Description of your club
+                <p class="astrick">*</p>
+            </h2>
+            <input type="text" class="form-inputs" name="Description" style="width: 90%;" placeholder="Tell us briefly about your club..." required>
+        </div>
+        <div class="card">
+            <h2 class="headings">Upload Logo of Your Club
+                <p class="astrick">*</p>
+            </h2>
+            <input type="file" name="File-name" class="form-inputs" style="border: none;">
+        </div>
+
+        <div class="button">
+            <input type="submit" value="Submit" id="submit">
+        </div>
+    </form>
+
+
+</body>
+
+
+</html>
